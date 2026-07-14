@@ -2136,13 +2136,47 @@ flex-wrap:wrap;
 }
 
 .person-btn{
+
 min-width:160px;
+
+background:#1b1b1b;
+
+color:#ffffff;
+
+border:2px solid rgba(255,255,255,.08);
+
+border-radius:14px;
+
+padding:14px 22px;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:.3s ease;
+
+}
+
+.person-btn:hover{
+
+border-color:var(--green);
+
+transform:translateY(-2px);
+
 }
 
 .person-btn.active{
+
 background:var(--green);
+
 color:#000;
+
+border-color:var(--green);
+
 font-weight:700;
+
 }
 
 .recommendation-box{
