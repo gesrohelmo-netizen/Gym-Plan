@@ -2333,54 +2333,76 @@ visibility:visible;
 
 }
 
+.mobile-menu-btn{
+
+display:none;
+
+}
+
 @media(max-width:768px){
+
+/* Only the ☰ button is visible */
 
 .mobile-menu-btn{
 
 display:flex;
 
+position:fixed;
+
+top:18px;
+left:18px;
+
+width:48px;
+height:48px;
+
 align-items:center;
 justify-content:center;
 
-width:46px;
-height:46px;
-
-font-size:24px;
-
-border:none;
-
-border-radius:14px;
+font-size:26px;
 
 background:#00ff88;
 
 color:#000;
 
+border:none;
+
+border-radius:14px;
+
 cursor:pointer;
 
 font-weight:700;
 
+box-shadow:0 8px 25px rgba(0,255,136,.25);
+
+z-index:1001;
+
 }
+
+/* Sidebar */
 
 .sidebar{
 
 position:fixed;
 
-left:-280px;
 top:0;
+left:-290px;
 
 width:270px;
-
 height:100vh;
 
 padding:25px;
 
-transition:.35s ease;
-
-z-index:999;
+background:#111;
 
 overflow-y:auto;
 
+transition:left .35s ease;
+
+z-index:999;
+
 }
+
+/* Open Sidebar */
 
 .sidebar.open{
 
@@ -2388,43 +2410,103 @@ left:0;
 
 }
 
-.sidebar.open .logo-text{
+/* Hide GymDietPro text */
 
-display:block !important;
+.logo-text{
+
+display:none !important;
 
 }
 
-.sidebar.open .nav-item{
+/* Center only the logo */
+
+.logo{
+
+justify-content:center;
+
+margin-bottom:30px;
+
+}
+
+.logo-icon{
+
+margin:0 auto;
+
+}
+
+/* Menu */
+
+.nav-menu{
+
+margin-top:10px;
+
+}
+
+.nav-item{
+
+display:flex;
+
+align-items:center;
 
 justify-content:flex-start;
 
+gap:18px;
+
+padding:15px 18px;
+
+margin-bottom:8px;
+
+border-radius:14px;
+
 }
 
-.sidebar.open .nav-item span{
+.nav-item .icon{
+
+font-size:22px;
+
+width:28px;
+
+text-align:center;
+
+}
+
+/* Show names */
+
+.nav-item span{
 
 display:inline !important;
 
 }
 
-.sidebar.open .nav-item{
+.nav-item span.icon{
 
-padding:14px 16px;
-
-margin-bottom:10px;
+display:flex !important;
 
 }
 
-.sidebar.open .nav-item:hover{
+.nav-item:hover{
 
-transform:translateX(8px);
+background:rgba(255,255,255,.05);
+
+transform:translateX(6px);
 
 }
 
-.sidebar.open .nav-item.active{
+.nav-item.active{
 
 background:rgba(0,255,136,.15);
 
 color:#00ff88;
+
+}
+
+.main-content{
+
+margin-left:0 !important;
+
+width:100% !important;
+
+padding:20px;
 
 }
 
