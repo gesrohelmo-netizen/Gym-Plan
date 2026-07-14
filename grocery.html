@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GymDietPro | Grocery</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+
+            <div class="logo-icon">
+                G
+            </div>
+
+
+            <div class="logo-text">
+
+
+                <h2>
+                    GymDietPro
+                </h2>
+
+
+                <span>
+                    Fitness Dashboard
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <nav class="nav-menu">
+
+
+
+            <a href="index.html" class="nav-item">
+
+
+                <span class="icon">
+                    🏠
+                </span>
+
+
+                <span>
+                    Dashboard
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="diet.html" class="nav-item">
+
+
+                <span class="icon">
+                    🥗
+                </span>
+
+
+                <span>
+                    Diet Planner
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="workout.html" class="nav-item">
+
+
+                <span class="icon">
+                    🏋️
+                </span>
+
+
+                <span>
+                    Workout
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="progress.html" class="nav-item">
+
+
+                <span class="icon">
+                    📈
+                </span>
+
+
+                <span>
+                    Progress
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="grocery.html" class="nav-item active">
+
+
+                <span class="icon">
+                    🛒
+                </span>
+
+
+                <span>
+                    Groceries
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="profile.html" class="nav-item">
+
+
+                <span class="icon">
+                    👤
+                </span>
+
+
+                <span>
+                    Profile
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="settings.html" class="nav-item">
+
+
+                <span class="icon">
+                    ⚙️
+                </span>
+
+
+                <span>
+                    Settings
+                </span>
+
+
+            </a>
+
+
+
+        </nav>
+
+
+
+
+    </aside>
+
+
+
+
+
+    <!-- ================= MAIN ================= -->
+
+
+
+    <main class="main-content">
+
+
+
+        <header class="topbar">
+
+
+
+            <div class="topbar-left">
+
+
+                <h1>
+                    Grocery Planner
+                </h1>
+
+
+                <p>
+                    Manage your fitness food shopping list.
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="topbar-right">
+
+
+                <button class="glass-btn" id="themeBtn">
+
+                    🌙
+
+                </button>
+
+
+
+
+
+                <div class="profile-mini">
+
+
+                    <div class="avatar">
+
+                        H
+
+                    </div>
+
+
+
+                    <div>
+
+
+                        <h4>
+                            Helmo
+                        </h4>
+
+
+                        <span>
+                            Premium Member
+                        </span>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </header>
+
+
+
+
+
+        <!-- ================= GROCERY STATS ================= -->
+
+
+
+        <section class="stats-grid">
+
+
+
+            <div class="glass-card stat-card">
+
+
+                <div class="stat-icon emerald">
+
+                    🛒
+
+                </div>
+
+
+
+                <div class="stat-content">
+
+
+                    <span>
+                        Total Items
+                    </span>
+
+
+                    <h2 id="totalItems">
+                        0
+                    </h2>
+
+
+                    <small>
+                        Shopping List
+                    </small>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="glass-card stat-card">
+
+
+                <div class="stat-icon blue">
+
+                    ✅
+
+                </div>
+
+
+
+                <div class="stat-content">
+
+
+                    <span>
+                        Purchased
+                    </span>
+
+
+                    <h2 id="completedItems">
+                        0
+                    </h2>
+
+
+                    <small>
+                        Completed
+                    </small>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="glass-card stat-card">
+
+
+                <div class="stat-icon orange">
+
+                    🍗
+
+                </div>
+
+
+
+                <div class="stat-content">
+
+
+                    <span>
+                        Protein Foods
+                    </span>
+
+
+                    <h2>
+                        12
+                    </h2>
+
+
+                    <small>
+                        Recommended
+                    </small>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="glass-card stat-card">
+
+
+                <div class="stat-icon pink">
+
+                    💰
+
+                </div>
+
+
+
+                <div class="stat-content">
+
+
+                    <span>
+                        Budget
+                    </span>
+
+
+                    <h2>
+                        --
+                    </h2>
+
+
+                    <small>
+                        Weekly
+                    </small>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+
+        <!-- ================= CONTENT ================= -->
+
+
+
+        <section class="dashboard-grid">
+
+
+
+            <div class="left-column">
+
+
+
+
+                <div class="glass-card">
+
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Add Grocery Item
+                        </h2>
+
+
+                    </div>
+
+
+
+
+                    <form id="groceryForm">
+
+
+
+                        <label>
+                            Item Name
+                        </label>
+
+
+
+
+                        <input
+                            type="text"
+                            id="groceryName"
+                            placeholder="Chicken Breast"
+                            required
+                        >
+
+
+
+
+                        <br><br>
+
+
+
+
+                        <label>
+                            Category
+                        </label>
+
+
+
+                        <select id="groceryCategory">
+
+
+
+                            <option>
+                                Protein
+                            </option>
+
+
+                            <option>
+                                Carbs
+                            </option>
+
+
+                            <option>
+                                Fruits
+                            </option>
+
+
+                            <option>
+                                Vegetables
+                            </option>
+
+
+                            <option>
+                                Dairy
+                            </option>
+
+
+                            <option>
+                                Supplements
+                            </option>
+
+
+                        </select>
+
+
+
+
+                        <br><br>
+
+
+
+
+                        <label>
+                            Quantity
+                        </label>
+
+
+
+                        <input
+                            type="text"
+                            id="groceryQuantity"
+                            placeholder="2 kg"
+                        >
+
+
+
+
+                        <br><br>
+
+
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+
+                            Add Item
+
+                        </button>
+
+
+
+                    </form>
+
+
+
+
+                </div>
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Shopping List
+                        </h2>
+
+
+                    </div>
+
+
+
+
+                    <div id="groceryList">
+
+
+
+                        <div class="empty-state">
+
+
+                            <h3>
+                                No items added
+                            </h3>
+
+
+                            <p>
+                                Add groceries for your fitness diet.
+                            </p>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+            <!-- ================= RIGHT COLUMN ================= -->
+
+
+
+            <div class="right-column">
+
+
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Food Categories
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Protein
+                            </h4>
+
+
+                            <span>
+                                Chicken, Eggs, Fish, Yogurt
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <strong>
+                                💪
+                            </strong>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Carbohydrates
+                            </h4>
+
+
+                            <span>
+                                Rice, Oats, Potatoes
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <strong>
+                                ⚡
+                            </strong>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Healthy Fats
+                            </h4>
+
+
+                            <span>
+                                Nuts, Olive Oil, Avocado
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <strong>
+                                🥑
+                            </strong>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= QUICK ITEMS ================= -->
+
+
+
+                <div class="glass-card">
+
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Quick Add
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <button class="primary-btn quick-food">
+                        Chicken Breast
+                    </button>
+
+
+                    <button class="primary-btn quick-food">
+                        Eggs
+                    </button>
+
+
+                    <button class="primary-btn quick-food">
+                        Greek Yogurt
+                    </button>
+
+
+                    <button class="primary-btn quick-food">
+                        Oats
+                    </button>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= SHOPPING TIPS ================= -->
+
+
+
+                <div class="glass-card">
+
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Shopping Tips
+                        </h2>
+
+
+                    </div>
+
+
+
+
+                    <blockquote>
+
+
+                        Plan your meals first,
+                        then buy only what supports your goals.
+
+
+
+                    </blockquote>
+
+
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= CHECKLIST ================= -->
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Weekly Essentials
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Chicken
+                        </div>
+
+
+
+                        <div class="progress-bar">
+
+
+                            <div
+                                class="progress-fill"
+                                style="width:100%">
+                            </div>
+
+
+                        </div>
+
+
+
+                        <span>
+                            ✓
+                        </span>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Eggs
+                        </div>
+
+
+
+                        <div class="progress-bar">
+
+
+                            <div
+                                class="progress-fill"
+                                style="width:80%">
+                            </div>
+
+
+                        </div>
+
+
+
+                        <span>
+                            ✓
+                        </span>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Vegetables
+                        </div>
+
+
+
+                        <div class="progress-bar">
+
+
+                            <div
+                                class="progress-fill"
+                                style="width:60%">
+                            </div>
+
+
+                        </div>
+
+
+
+                        <span>
+                            ✓
+                        </span>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+        </section>
+
+
+
+
+
+    </main>
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>

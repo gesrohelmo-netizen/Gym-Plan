@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymDietPro | Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">G</div>
+            <div class="logo-text">
+                <h2>GymDietPro</h2>
+                <span>Fitness Dashboard</span>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="index.html" class="nav-item active">
+                <span class="icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="diet.html" class="nav-item">
+                <span class="icon">🥗</span>
+                <span>Diet Planner</span>
+            </a>
+            <li>
+    <a href="shawan-diet.html">
+        🥗
+        <span>SHAWAN'S DIET</span>
+    </a>
+</li>            
+
+
+
+            <a href="workout.html" class="nav-item">
+                <span class="icon">🏋️</span>
+                <span>Workout</span>
+            </a>
+
+            <a href="progress.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="grocery.html" class="nav-item">
+                <span class="icon">🛒</span>
+                <span>Groceries</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="icon">👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+                <h1>Dashboard</h1>
+                <p>Welcome back. Stay consistent.</p>
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="glass-btn" id="themeBtn">
+                    🌙
+                </button>
+
+                <button class="glass-btn">
+                    🔔
+                </button>
+
+                <div class="profile-mini">
+                    <div class="avatar">
+                        H
+                    </div>
+
+                    <div>
+                        <h4>Helmo</h4>
+                        <span>Premium Member</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- QUICK STATS -->
+
+        <section class="stats-grid">
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon emerald">
+                    🔥
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Calories</span>
+
+                    <h2 id="todayCalories">
+                        0
+                    </h2>
+
+                    <small>Today's Intake</small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon blue">
+                    💪
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Protein</span>
+
+                    <h2 id="todayProtein">
+                        0g
+                    </h2>
+
+                    <small>Goal Progress</small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon orange">
+                    🏋️
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Workout</span>
+
+                    <h2 id="workoutStatus">
+                        Rest
+                    </h2>
+
+                    <small>Today's Plan</small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon pink">
+                    ⚖️
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Weight</span>
+
+                    <h2 id="currentWeight">
+                        -- kg
+                    </h2>
+
+                    <small>Latest Entry</small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DASHBOARD GRID -->
+
+        <section class="dashboard-grid">
+
+            <!-- LEFT COLUMN -->
+
+            <div class="left-column">
+
+                <!-- DAILY GOALS -->
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>Daily Goals</h2>
+
+                        <button class="glass-btn small-btn">
+                            Edit
+                        </button>
+
+                    </div>
+
+                    <div class="goal-item">
+
+                        <div class="goal-info">
+                            Calories
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill"
+                                 id="calorieProgress"
+                                 style="width:0%;">
+
+                            </div>
+
+                        </div>
+
+                        <span id="caloriePercent">
+                            0%
+                        </span>
+
+                    </div>
+
+                    <div class="goal-item">
+
+                        <div class="goal-info">
+                            Protein
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill"
+                                 id="proteinProgress"
+                                 style="width:0%;">
+
+                            </div>
+
+                        </div>
+
+                        <span id="proteinPercent">
+                            0%
+                        </span>
+
+                    </div>
+
+                    <div class="goal-item">
+
+                        <div class="goal-info">
+                            Water
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill"
+                                 id="waterProgress"
+                                 style="width:0%;">
+
+                            </div>
+
+                        </div>
+
+                        <span id="waterPercent">
+                            0%
+                        </span>
+
+                    </div>
+
+                    <div class="goal-item">
+
+                        <div class="goal-info">
+                            Workout
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill"
+                                 id="workoutProgress"
+                                 style="width:0%;">
+
+                            </div>
+
+                        </div>
+
+                        <span id="workoutPercent">
+                            0%
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- TODAY MEALS -->
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>Today's Meals</h2>
+
+                        <button class="glass-btn small-btn"
+                                id="addMealBtn">
+                            +
+                        </button>
+
+                    </div>
+
+                    <div id="mealList">
+
+                        <div class="empty-state">
+
+                            <h3>No meals added</h3>
+
+                            <p>Add your first meal from Diet Planner.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+
+            <div class="right-column">
+
+                <!-- BMI -->
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>BMI</h2>
+
+                    </div>
+
+                    <div class="bmi-box">
+
+                        <h1 id="bmiValue">
+                            --
+                        </h1>
+
+                        <span id="bmiStatus">
+                            Unknown
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- NEXT WORKOUT -->
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>Next Workout</h2>
+
+                    </div>
+
+                    <div class="workout-preview">
+
+                        <h3 id="nextWorkout">
+                            Push Day
+                        </h3>
+
+                        <p>
+                            Chest • Shoulders • Triceps
+                        </p>
+
+                        <button class="primary-btn">
+                            Start Workout
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- WATER -->
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>Water Intake</h2>
+
+                    </div>
+
+                    <div class="water-box">
+
+                        <h2 id="waterValue">
+                            0L
+                        </h2>
+
+                        <button class="primary-btn"
+                                id="drinkWater">
+                            +250ml
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- MOTIVATION -->
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>Motivation</h2>
+
+                    </div>
+
+                    <blockquote id="quoteBox">
+
+                        Discipline is choosing between what you want now
+                        and what you want most.
+
+                    </blockquote>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

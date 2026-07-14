@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GymDietPro | Diet Planner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                G
+            </div>
+
+            <div class="logo-text">
+
+                <h2>GymDietPro</h2>
+
+                <span>Fitness Dashboard</span>
+
+            </div>
+
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="diet.html" class="nav-item active">
+                <span class="icon">🥗</span>
+                <span>Diet Planner</span>
+            </a>
+
+            <a href="workout.html" class="nav-item">
+                <span class="icon">🏋️</span>
+                <span>Workout</span>
+            </a>
+
+            <a href="progress.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="grocery.html" class="nav-item">
+                <span class="icon">🛒</span>
+                <span>Groceries</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="icon">👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <h1>Diet Planner</h1>
+
+                <p>Track meals, calories and protein intake.</p>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="glass-btn" id="themeBtn">
+                    🌙
+                </button>
+
+                <div class="profile-mini">
+
+                    <div class="avatar">
+                        H
+                    </div>
+
+                    <div>
+
+                        <h4>Helmo</h4>
+
+                        <span>Premium Member</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ================= DAILY SUMMARY ================= -->
+
+        <section class="stats-grid">
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon emerald">
+                    🔥
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Total Calories</span>
+
+                    <h2 id="dietCalories">
+                        0
+                    </h2>
+
+                    <small>Today's Intake</small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon blue">
+                    💪
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Protein</span>
+
+                    <h2 id="dietProtein">
+                        0g
+                    </h2>
+
+                    <small>Consumed</small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon orange">
+                    🍚
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Carbs</span>
+
+                    <h2 id="dietCarbs">
+                        0g
+                    </h2>
+
+                    <small>Consumed</small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon pink">
+                    🥑
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Fats</span>
+
+                    <h2 id="dietFats">
+                        0g
+                    </h2>
+
+                    <small>Consumed</small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="dashboard-grid">
+
+            <div class="left-column">
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>Add Meal</h2>
+
+                    </div>
+
+                    <form id="mealForm">
+
+                        <label>Meal Name</label>
+
+                        <input
+                            type="text"
+                            id="mealName"
+                            placeholder="Chicken Breast"
+                            required
+                        >
+
+                        <br><br>
+
+                        <label>Calories</label>
+
+                        <input
+                            type="number"
+                            id="mealCalories"
+                            placeholder="250"
+                            required
+                        >
+
+                        <br><br>
+
+                        <label>Protein (g)</label>
+
+                        <input
+                            type="number"
+                            id="mealProtein"
+                            placeholder="30"
+                            required
+                        >
+
+                        <br><br>
+
+                        <label>Carbs (g)</label>
+
+                        <input
+                            type="number"
+                            id="mealCarbs"
+                            placeholder="20"
+                        >
+
+                        <br><br>
+
+                        <label>Fats (g)</label>
+
+                        <input
+                            type="number"
+                            id="mealFats"
+                            placeholder="8"
+                        >
+                        <br><br>
+
+                        <label>Meal Time</label>
+
+                        <select id="mealTime">
+
+                            <option value="Breakfast">
+                                Breakfast
+                            </option>
+
+                            <option value="Lunch">
+                                Lunch
+                            </option>
+
+                            <option value="Dinner">
+                                Dinner
+                            </option>
+
+                            <option value="Snack">
+                                Snack
+                            </option>
+
+                        </select>
+
+                        <br><br>
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+                            Add Meal
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- ================= MEAL HISTORY ================= -->
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>Today's Meals</h2>
+
+                    </div>
+
+
+                    <div id="dietMealList">
+
+
+                        <div class="empty-state">
+
+                            <h3>No meals yet</h3>
+
+                            <p>
+                                Your added meals will appear here.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================= RIGHT COLUMN ================= -->
+
+
+            <div class="right-column">
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+                        <h2>Nutrition Goals</h2>
+
+                    </div>
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Calories
+                        </div>
+
+
+                        <div class="progress-bar">
+
+
+                            <div
+                                class="progress-fill"
+                                id="dietCaloriesBar">
+                            </div>
+
+
+                        </div>
+
+
+                        <span id="dietCaloriesPercent">
+                            0%
+                        </span>
+
+
+                    </div>
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Protein
+                        </div>
+
+
+                        <div class="progress-bar">
+
+
+                            <div
+                                class="progress-fill"
+                                id="dietProteinBar">
+                            </div>
+
+
+                        </div>
+
+
+                        <span id="dietProteinPercent">
+                            0%
+                        </span>
+
+
+                    </div>
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Carbs
+                        </div>
+
+
+                        <div class="progress-bar">
+
+
+                            <div
+                                class="progress-fill"
+                                id="dietCarbsBar">
+                            </div>
+
+
+                        </div>
+
+
+                        <span id="dietCarbsPercent">
+                            0%
+                        </span>
+
+
+                    </div>
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Fats
+                        </div>
+
+
+                        <div class="progress-bar">
+
+
+                            <div
+                                class="progress-fill"
+                                id="dietFatsBar">
+                            </div>
+
+
+                        </div>
+
+
+                        <span id="dietFatsPercent">
+                            0%
+                        </span>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= FOOD SUGGESTIONS ================= -->
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+                        <h2>Recommended Foods</h2>
+
+                    </div>
+
+
+
+                    <div class="food-list">
+
+
+                        <div class="meal-item">
+
+
+                            <div class="meal-left">
+
+                                <h4>
+                                    Chicken Breast
+                                </h4>
+
+                                <span>
+                                    Lean Protein Source
+                                </span>
+
+                            </div>
+
+
+                            <div class="meal-right">
+
+                                <strong>
+                                    31g
+                                </strong>
+
+                                <small>
+                                    Protein / 100g
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+                        <div class="meal-item">
+
+
+                            <div class="meal-left">
+
+                                <h4>
+                                    Eggs
+                                </h4>
+
+                                <span>
+                                    Complete Protein
+                                </span>
+
+                            </div>
+
+
+                            <div class="meal-right">
+
+                                <strong>
+                                    13g
+                                </strong>
+
+                                <small>
+                                    Protein / 2 eggs
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+                        <div class="meal-item">
+
+
+                            <div class="meal-left">
+
+                                <h4>
+                                    Greek Yogurt
+                                </h4>
+
+                                <span>
+                                    High Protein Dairy
+                                </span>
+
+                            </div>
+
+
+                            <div class="meal-right">
+
+                                <strong>
+                                    10g
+                                </strong>
+
+                                <small>
+                                    Protein / 100g
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= MACROS ================= -->
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+                        <h2>Macro Split</h2>
+
+                    </div>
+
+
+                    <div class="macro-box">
+
+
+                        <div class="macro-item">
+
+                            <span>
+                                Protein
+                            </span>
+
+                            <strong id="macroProtein">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="macro-item">
+
+                            <span>
+                                Carbs
+                            </span>
+
+                            <strong id="macroCarbs">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+
+
+                        <div class="macro-item">
+
+                            <span>
+                                Fats
+                            </span>
+
+                            <strong id="macroFats">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+</div>
+
+
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>

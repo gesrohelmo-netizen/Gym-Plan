@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GymDietPro | Settings</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+
+            <div class="logo-icon">
+                G
+            </div>
+
+
+            <div class="logo-text">
+
+
+                <h2>
+                    GymDietPro
+                </h2>
+
+
+                <span>
+                    Fitness Dashboard
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <nav class="nav-menu">
+
+
+
+            <a href="index.html" class="nav-item">
+
+
+                <span class="icon">
+                    🏠
+                </span>
+
+
+                <span>
+                    Dashboard
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="diet.html" class="nav-item">
+
+
+                <span class="icon">
+                    🥗
+                </span>
+
+
+                <span>
+                    Diet Planner
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="workout.html" class="nav-item">
+
+
+                <span class="icon">
+                    🏋️
+                </span>
+
+
+                <span>
+                    Workout
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="progress.html" class="nav-item">
+
+
+                <span class="icon">
+                    📈
+                </span>
+
+
+                <span>
+                    Progress
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="grocery.html" class="nav-item">
+
+
+                <span class="icon">
+                    🛒
+                </span>
+
+
+                <span>
+                    Groceries
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="profile.html" class="nav-item">
+
+
+                <span class="icon">
+                    👤
+                </span>
+
+
+                <span>
+                    Profile
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="settings.html" class="nav-item active">
+
+
+                <span class="icon">
+                    ⚙️
+                </span>
+
+
+                <span>
+                    Settings
+                </span>
+
+
+            </a>
+
+
+
+        </nav>
+
+
+
+
+    </aside>
+
+
+
+
+
+    <!-- ================= MAIN ================= -->
+
+
+
+    <main class="main-content">
+
+
+
+        <header class="topbar">
+
+
+
+            <div class="topbar-left">
+
+
+                <h1>
+                    Settings
+                </h1>
+
+
+                <p>
+                    Customize your GymDietPro experience.
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="topbar-right">
+
+
+                <button class="glass-btn" id="themeBtn">
+
+                    🌙
+
+                </button>
+
+
+
+
+
+                <div class="profile-mini">
+
+
+                    <div class="avatar">
+
+                        H
+
+                    </div>
+
+
+
+                    <div>
+
+
+                        <h4>
+                            Helmo
+                        </h4>
+
+
+                        <span>
+                            Premium Member
+                        </span>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </header>
+
+
+
+
+
+        <!-- ================= SETTINGS CONTENT ================= -->
+
+
+
+        <section class="dashboard-grid">
+
+
+
+            <div class="left-column">
+
+
+
+
+
+                <div class="glass-card">
+
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Account Settings
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <form id="settingsForm">
+
+
+
+                        <label>
+                            Display Name
+                        </label>
+
+
+
+                        <input
+                            type="text"
+                            value="Helmo"
+                            id="displayName"
+                        >
+
+
+
+
+
+                        <br><br>
+
+
+
+
+
+                        <label>
+                            Fitness Goal
+                        </label>
+
+
+
+                        <select id="fitnessGoal">
+
+
+                            <option>
+                                Lean Bulk
+                            </option>
+
+
+                            <option>
+                                Fat Loss
+                            </option>
+
+
+                            <option>
+                                Muscle Gain
+                            </option>
+
+
+                            <option>
+                                Maintenance
+                            </option>
+
+
+                        </select>
+
+
+
+
+
+                        <br><br>
+
+
+
+
+
+                        <label>
+                            Experience Level
+                        </label>
+
+
+
+                        <select id="experienceLevel">
+
+
+                            <option>
+                                Beginner
+                            </option>
+
+
+                            <option>
+                                Intermediate
+                            </option>
+
+
+                            <option>
+                                Advanced
+                            </option>
+
+
+                        </select>
+
+
+
+
+
+                        <br><br>
+
+
+
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+
+                            Save Settings
+
+                        </button>
+
+
+
+
+                    </form>
+
+
+
+
+                </div>
+
+
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Daily Targets
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <label>
+                        Calories Goal
+                    </label>
+
+
+
+                    <input
+                        type="number"
+                        value="2800"
+                    >
+
+
+
+
+                    <br><br>
+
+
+
+
+
+                    <label>
+                        Protein Goal (g)
+                    </label>
+
+
+
+                    <input
+                        type="number"
+                        value="150"
+                    >
+
+
+
+
+                    <br><br>
+
+
+
+
+
+                    <label>
+                        Water Goal (Liters)
+                    </label>
+
+
+
+                    <input
+                        type="number"
+                        value="3"
+                    >
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+            <!-- ================= RIGHT COLUMN ================= -->
+
+
+
+            <div class="right-column">
+
+
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Notifications
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Workout Reminders
+                            </h4>
+
+
+                            <span>
+                                Get notified before training
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Meal Reminders
+                            </h4>
+
+
+                            <span>
+                                Track your nutrition on time
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Progress Updates
+                            </h4>
+
+
+                            <span>
+                                Weekly fitness reports
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Appearance
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Theme
+                            </h4>
+
+
+                            <span>
+                                Dashboard appearance
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <button
+                                class="glass-btn"
+                                id="appearanceToggle">
+
+                                🌙
+
+                            </button>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Glass Effect
+                            </h4>
+
+
+                            <span>
+                                Enable glass cards
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Privacy
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Data Storage
+                            </h4>
+
+
+                            <span>
+                                Store fitness records locally
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <strong>
+                                ON
+                            </strong>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="meal-item">
+
+
+                        <div class="meal-left">
+
+
+                            <h4>
+                                Account Security
+                            </h4>
+
+
+                            <span>
+                                Manage your account protection
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="meal-right">
+
+
+                            <strong>
+                                🔒
+                            </strong>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            System
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <button
+                        class="primary-btn"
+                        id="clearDataBtn">
+
+                        Clear Local Data
+
+                    </button>
+
+
+
+
+
+                    <button
+                        class="primary-btn"
+                        id="logoutBtn">
+
+                        Logout
+
+                    </button>
+
+
+
+
+                </div>
+
+
+
+
+
+                <div class="glass-card">
+
+
+                    <blockquote>
+
+
+                        GymDietPro helps you stay organized,
+                        consistent and focused on your fitness goals.
+
+
+
+                    </blockquote>
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+        </section>
+
+
+
+
+
+    </main>
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GymDietPro | Shawan's Diet</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                G
+            </div>
+
+            <div class="logo-text">
+                <h2>GymDietPro</h2>
+                <span>Fitness Dashboard</span>
+            </div>
+
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="index.html" class="nav-item">
+                <span class="icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="diet.html" class="nav-item">
+                <span class="icon">🥗</span>
+                <span>Diet Planner</span>
+            </a>
+
+            <a href="shawan-diet.html" class="nav-item active">
+                <span class="icon">🍽️</span>
+                <span>Shawan's Diet</span>
+            </a>
+
+            <a href="workout.html" class="nav-item">
+                <span class="icon">🏋️</span>
+                <span>Workout</span>
+            </a>
+
+            <a href="progress.html" class="nav-item">
+                <span class="icon">📈</span>
+                <span>Progress</span>
+            </a>
+
+            <a href="grocery.html" class="nav-item">
+                <span class="icon">🛒</span>
+                <span>Groceries</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <span class="icon">👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span class="icon">⚙️</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <h1>Shawan's Personalized Diet</h1>
+
+                <p>
+                    Lean Bulk • Pakistan Friendly • Budget Friendly • 7-Day Rotation
+                </p>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="glass-btn" id="themeBtn">
+                    🌙
+                </button>
+
+                <div class="profile-mini">
+
+                    <div class="avatar">
+                        U
+                    </div>
+
+                    <div>
+                        <h4 id="currentPerson">
+                            Umar
+                        </h4>
+
+                        <span>
+                            Active Diet
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- PERSON SELECTOR -->
+
+        <section class="glass-card">
+
+            <div class="card-header">
+
+                <h2>Select Person</h2>
+
+            </div>
+
+            <div class="person-selector">
+
+                <button
+                    class="primary-btn person-btn active"
+                    id="umarBtn">
+
+                    Umar
+
+                </button>
+
+                <button
+                    class="glass-btn person-btn"
+                    id="haziqBtn">
+
+                    Haziq
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PROFILE STATS -->
+
+        <section class="stats-grid">
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon emerald">
+                    ⚖️
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Weight</span>
+
+                    <h2 id="dietWeight">
+                        56 kg
+                    </h2>
+
+                    <small>
+                        Current
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon blue">
+                    📏
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Height</span>
+
+                    <h2 id="dietHeight">
+                        5'7"
+                    </h2>
+
+                    <small>
+                        Current
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon orange">
+                    🔥
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Calories</span>
+
+                    <h2 id="dietCalories">
+                        2550
+                    </h2>
+
+                    <small>
+                        kcal/day
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card stat-card">
+
+                <div class="stat-icon pink">
+                    💪
+                </div>
+
+                <div class="stat-content">
+
+                    <span>Protein</span>
+
+                    <h2 id="dietProtein">
+                        145g
+                    </h2>
+
+                    <small>
+                        Daily Target
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-grid">
+
+            <div class="left-column">
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>
+                            Today's Recommendation
+                        </h2>
+
+                    </div>
+
+                    <div class="recommendation-box">
+
+                        <h3 id="recommendationTitle">
+
+                            Lean Bulk Priority
+
+                        </h3>
+
+                        <p id="recommendationText">
+
+                            Today's meals focus on high protein,
+                            moderate carbohydrates and controlled fats
+                            to build muscle while keeping body fat low.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            Weekly Diet Rotation
+
+                        </h2>
+
+                    </div>
+
+                    <div id="weeklyDietContainer">
+
+                        <!-- Filled using JavaScript -->
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+
+            <div class="right-column">
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+                        <h2>Current Targets</h2>
+                    </div>
+
+                    <div class="goal-item">
+
+                        <div class="goal-info">
+                            Calories
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width:100%"></div>
+                        </div>
+
+                        <span id="goalCalories">
+                            2550 kcal
+                        </span>
+
+                    </div>
+
+                    <div class="goal-item">
+
+                        <div class="goal-info">
+                            Protein
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width:100%"></div>
+                        </div>
+
+                        <span id="goalProtein">
+                            145 g
+                        </span>
+
+                    </div>
+
+                    <div class="goal-item">
+
+                        <div class="goal-info">
+                            Carbohydrates
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width:100%"></div>
+                        </div>
+
+                        <span id="goalCarbs">
+                            330 g
+                        </span>
+
+                    </div>
+
+                    <div class="goal-item">
+
+                        <div class="goal-info">
+                            Fats
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width:100%"></div>
+                        </div>
+
+                        <span id="goalFats">
+                            65 g
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+                        <h2>Water Intake</h2>
+                    </div>
+
+                    <h1 id="waterTarget">
+                        3.5 Litres
+                    </h1>
+
+                    <p class="text-muted">
+                        Drink one glass immediately after waking up,
+                        another before each meal and keep a bottle
+                        with you during workouts.
+                    </p>
+
+                </div>
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+                        <h2>Shopping List</h2>
+                    </div>
+
+                    <div id="shoppingList">
+
+                        <!-- Filled from JS -->
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card">
+
+                    <div class="card-header">
+                        <h2>Important Notes</h2>
+                    </div>
+
+                    <ul class="diet-notes">
+
+                        <li>✔ No supplements required.</li>
+
+                        <li>✔ Chicken can be replaced with beef twice weekly.</li>
+
+                        <li>✔ Use homemade yogurt whenever possible.</li>
+
+                        <li>✔ Prefer boiled or grilled chicken.</li>
+
+                        <li>✔ Sleep 8–9 hours daily.</li>
+
+                        <li>✔ Eat your post-workout meal within 60 minutes.</li>
+
+                        <li>✔ Drink water throughout the day.</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="glass-card">
+
+                    <blockquote>
+
+                        "Consistency beats perfection. Follow the
+                        plan for months—not days."
+
+                    </blockquote>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DAY TEMPLATE (Filled by JavaScript) -->
+
+        <template id="dayCardTemplate">
+
+            <div class="diet-day-card">
+
+                <div class="diet-day-header">
+
+                    <h3 class="diet-day-name"></h3>
+
+                    <span class="diet-day-calories"></span>
+
+                </div>
+
+                <div class="diet-meals"></div>
+
+            </div>
+
+        </template>
+
+        <script src="js/app.js"></script>
+
+        <script src="js/shawan-diet.js"></script>
+
+    </main>
+
+</div>
+<script>
+
+/* ==========================================================
+   UMAR (17 | 5'7" | 56kg | Lean Bulk)
+   2550 kcal | 145g Protein | ~330g Carbs | ~65g Fat
+   ========================================================== */
+
+const umarDiet = [
+
+{
+day:"Monday",
+calories:"2550 kcal",
+meals:[
+["7:30 AM","Breakfast","80g oats + 300ml milk + 1 banana + 15g peanut butter"],
+["10:30 AM","Snack","200g homemade yogurt + 20g peanuts"],
+["1:30 PM","Lunch","200g cooked rice + 170g grilled chicken + salad"],
+["4:00 PM","Pre Workout","2 bananas + 250ml milk"],
+["6:45 PM","Post Workout","180g grilled chicken + 250g boiled rice"],
+["9:00 PM","Dinner","2 chapati + 150g daal + cucumber salad"],
+["10:30 PM","Before Bed","250ml milk"]
+]
+},
+
+{
+day:"Tuesday",
+calories:"2520 kcal",
+meals:[
+["7:30 AM","Breakfast","3 paratha triangles (small homemade) + 250ml milk"],
+["10:30 AM","Snack","200g yogurt"],
+["1:30 PM","Lunch","2 chapati + 170g chicken curry"],
+["4:00 PM","Pre Workout","2 bananas"],
+["6:45 PM","Post Workout","220g cooked rice + 170g chicken"],
+["9:00 PM","Dinner","150g daal + 2 chapati"],
+["10:30 PM","Before Bed","250ml milk"]
+]
+},
+
+{
+day:"Wednesday",
+calories:"2570 kcal",
+meals:[
+["7:30 AM","Breakfast","80g oats + milk + banana"],
+["10:30 AM","Snack","Apple + 25g peanuts"],
+["1:30 PM","Lunch","250g rice + 170g grilled chicken"],
+["4:00 PM","Pre Workout","Banana + yogurt"],
+["6:45 PM","Post Workout","180g chicken + 250g rice"],
+["9:00 PM","Dinner","2 chapati + daal"],
+["10:30 PM","Before Bed","250ml milk"]
+]
+},
+
+{
+day:"Thursday",
+calories:"2530 kcal",
+meals:[
+["7:30 AM","Breakfast","2 chapati + yogurt"],
+["10:30 AM","Snack","Banana"],
+["1:30 PM","Lunch","200g rice + 180g chicken"],
+["4:00 PM","Pre Workout","250ml milk + banana"],
+["6:45 PM","Post Workout","Chicken pulao (300g)"],
+["9:00 PM","Dinner","150g daal + salad + chapati"],
+["10:30 PM","Before Bed","Milk"]
+]
+},
+
+{
+day:"Friday",
+calories:"2580 kcal",
+meals:[
+["7:30 AM","Breakfast","Oats + milk + banana"],
+["10:30 AM","Snack","200g yogurt"],
+["1:30 PM","Lunch","Beef (150g) + 2 chapati"],
+["4:00 PM","Pre Workout","Banana"],
+["6:45 PM","Post Workout","200g rice + 170g chicken"],
+["9:00 PM","Dinner","150g daal"],
+["10:30 PM","Before Bed","Milk"]
+]
+},
+
+{
+day:"Saturday",
+calories:"2540 kcal",
+meals:[
+["7:30 AM","Breakfast","80g oats + milk"],
+["10:30 AM","Snack","Apple"],
+["1:30 PM","Lunch","Rice + grilled chicken"],
+["4:00 PM","Pre Workout","Banana + yogurt"],
+["6:45 PM","Post Workout","Chicken + rice"],
+["9:00 PM","Dinner","2 chapati + daal"],
+["10:30 PM","Before Bed","Milk"]
+]
+},
+
+{
+day:"Sunday",
+calories:"2480 kcal (Rest Day)",
+meals:[
+["8:00 AM","Breakfast","Milk + oats"],
+["11:00 AM","Snack","Yogurt"],
+["2:00 PM","Lunch","170g chicken + vegetables + chapati"],
+["5:00 PM","Snack","Banana"],
+["8:00 PM","Dinner","150g daal + salad + chapati"],
+["10:00 PM","Before Bed","Milk"]
+]
+}
+
+];
+
+
+/* ================= RENDER UMAR ================= */
+
+const weeklyContainer =
+document.getElementById("weeklyDietContainer");
+
+if(weeklyContainer){
+
+umarDiet.forEach(day=>{
+
+let mealsHTML="";
+
+day.meals.forEach(meal=>{
+
+mealsHTML += `
+
+<div class="meal-item">
+
+<div class="meal-left">
+
+<h4>${meal[1]}</h4>
+
+<span>${meal[0]}</span>
+
+</div>
+
+<div class="meal-right">
+
+<strong>${meal[2]}</strong>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+weeklyContainer.innerHTML += `
+
+<div class="glass-card diet-day-card">
+
+<div class="card-header">
+
+<h2>${day.day}</h2>
+
+<span class="text-green">${day.calories}</span>
+
+</div>
+
+${mealsHTML}
+
+</div>
+
+`;
+
+});
+
+}
+
+</script>
+<script>
+
+/* ==========================================================
+   HAZIQ (17 | 5'10" | 52kg | Lean Bulk)
+   2750 kcal | 160g Protein | ~365g Carbs | ~70g Fat
+   ========================================================== */
+
+const haziqDiet = [
+
+{
+day:"Monday",
+calories:"2750 kcal",
+meals:[
+["7:30 AM","Breakfast","100g oats + 350ml milk + 2 bananas + 20g peanut butter"],
+["10:30 AM","Snack","250g homemade yogurt + 30g peanuts"],
+["1:30 PM","Lunch","250g cooked rice + 200g grilled chicken + salad"],
+["4:00 PM","Pre Workout","2 bananas + 300ml milk"],
+["6:45 PM","Post Workout","220g grilled chicken + 300g boiled rice"],
+["9:00 PM","Dinner","3 chapati + 180g daal"],
+["10:30 PM","Before Bed","300ml milk"]
+]
+},
+
+{
+day:"Tuesday",
+calories:"2730 kcal",
+meals:[
+["7:30 AM","Breakfast","3 homemade chapati + 300ml milk"],
+["10:30 AM","Snack","250g yogurt"],
+["1:30 PM","Lunch","250g rice + 200g chicken curry"],
+["4:00 PM","Pre Workout","2 bananas"],
+["6:45 PM","Post Workout","300g chicken pulao"],
+["9:00 PM","Dinner","3 chapati + daal"],
+["10:30 PM","Before Bed","300ml milk"]
+]
+},
+
+{
+day:"Wednesday",
+calories:"2760 kcal",
+meals:[
+["7:30 AM","Breakfast","100g oats + milk + banana"],
+["10:30 AM","Snack","Apple + 30g peanuts"],
+["1:30 PM","Lunch","300g rice + 200g grilled chicken"],
+["4:00 PM","Pre Workout","Banana + yogurt"],
+["6:45 PM","Post Workout","220g chicken + 300g rice"],
+["9:00 PM","Dinner","3 chapati + daal"],
+["10:30 PM","Before Bed","300ml milk"]
+]
+},
+
+{
+day:"Thursday",
+calories:"2740 kcal",
+meals:[
+["7:30 AM","Breakfast","3 chapati + yogurt"],
+["10:30 AM","Snack","Banana"],
+["1:30 PM","Lunch","250g rice + 200g chicken"],
+["4:00 PM","Pre Workout","Milk + banana"],
+["6:45 PM","Post Workout","Chicken pulao (350g)"],
+["9:00 PM","Dinner","180g daal + salad"],
+["10:30 PM","Before Bed","Milk"]
+]
+},
+
+{
+day:"Friday",
+calories:"2780 kcal",
+meals:[
+["7:30 AM","Breakfast","100g oats + milk"],
+["10:30 AM","Snack","250g yogurt"],
+["1:30 PM","Lunch","180g beef + 3 chapati"],
+["4:00 PM","Pre Workout","2 bananas"],
+["6:45 PM","Post Workout","220g chicken + 300g rice"],
+["9:00 PM","Dinner","180g daal"],
+["10:30 PM","Before Bed","300ml milk"]
+]
+},
+
+{
+day:"Saturday",
+calories:"2740 kcal",
+meals:[
+["7:30 AM","Breakfast","100g oats + milk"],
+["10:30 AM","Snack","Apple"],
+["1:30 PM","Lunch","Rice + grilled chicken"],
+["4:00 PM","Pre Workout","Banana + yogurt"],
+["6:45 PM","Post Workout","Chicken + rice"],
+["9:00 PM","Dinner","3 chapati + daal"],
+["10:30 PM","Before Bed","Milk"]
+]
+},
+
+{
+day:"Sunday",
+calories:"2670 kcal (Rest Day)",
+meals:[
+["8:00 AM","Breakfast","Milk + oats"],
+["11:00 AM","Snack","Yogurt"],
+["2:00 PM","Lunch","200g chicken + vegetables + 3 chapati"],
+["5:00 PM","Snack","Banana"],
+["8:00 PM","Dinner","180g daal + salad"],
+["10:00 PM","Before Bed","Milk"]
+]
+}
+
+];
+
+/* =======================
+   PERSON SWITCHING
+======================= */
+
+const umarBtn = document.getElementById("umarBtn");
+const haziqBtn = document.getElementById("haziqBtn");
+
+function renderDiet(person){
+
+weeklyContainer.innerHTML="";
+
+const diet = person==="umar" ? umarDiet : haziqDiet;
+
+if(person==="umar"){
+
+document.getElementById("currentPerson").innerText="Umar";
+document.getElementById("dietWeight").innerText="56 kg";
+document.getElementById("dietHeight").innerText="5'7";
+document.getElementById("dietCalories").innerText="2550";
+document.getElementById("dietProtein").innerText="145g";
+document.getElementById("goalCalories").innerText="2550 kcal";
+document.getElementById("goalProtein").innerText="145 g";
+document.getElementById("goalCarbs").innerText="330 g";
+document.getElementById("goalFats").innerText="65 g";
+document.getElementById("waterTarget").innerText="3.5 Litres";
+
+}else{
+
+document.getElementById("currentPerson").innerText="Haziq";
+document.getElementById("dietWeight").innerText="52 kg";
+document.getElementById("dietHeight").innerText="5'10";
+document.getElementById("dietCalories").innerText="2750";
+document.getElementById("dietProtein").innerText="160g";
+document.getElementById("goalCalories").innerText="2750 kcal";
+document.getElementById("goalProtein").innerText="160 g";
+document.getElementById("goalCarbs").innerText="365 g";
+document.getElementById("goalFats").innerText="70 g";
+document.getElementById("waterTarget").innerText="4 Litres";
+
+}
+
+diet.forEach(day=>{
+
+let meals="";
+
+day.meals.forEach(meal=>{
+
+meals+=`
+<div class="meal-item">
+<div class="meal-left">
+<h4>${meal[1]}</h4>
+<span>${meal[0]}</span>
+</div>
+<div class="meal-right">
+<strong>${meal[2]}</strong>
+</div>
+</div>
+`;
+
+});
+
+weeklyContainer.innerHTML+=`
+<div class="glass-card diet-day-card">
+<div class="card-header">
+<h2>${day.day}</h2>
+<span class="text-green">${day.calories}</span>
+</div>
+${meals}
+</div>
+`;
+
+});
+
+localStorage.setItem("selectedDietPerson",person);
+
+}
+
+umarBtn.onclick=()=>{
+
+umarBtn.classList.add("active");
+haziqBtn.classList.remove("active");
+
+renderDiet("umar");
+
+};
+
+haziqBtn.onclick=()=>{
+
+haziqBtn.classList.add("active");
+umarBtn.classList.remove("active");
+
+renderDiet("haziq");
+
+};
+
+const savedPerson =
+localStorage.getItem("selectedDietPerson") || "umar";
+
+if(savedPerson==="haziq"){
+
+haziqBtn.click();
+
+}else{
+
+umarBtn.click();
+
+}
+
+</script>
+<script>
+
+/* ==========================================
+   DYNAMIC SHOPPING LIST
+========================================== */
+
+const shoppingList = document.getElementById("shoppingList");
+
+const groceryData = {
+
+umar:[
+"🐔 Chicken Breast (1.8 kg/week)",
+"🍚 Rice (3.5 kg/week)",
+"🥣 Oats (700 g)",
+"🥛 Milk (14 Litres)",
+"🥣 Homemade Yogurt (2.5 kg)",
+"🍌 Bananas (18)",
+"🥜 Peanuts (250 g)",
+"🌾 Daal (1 kg)",
+"🥬 Salad & Vegetables",
+"🫓 Wheat Flour / Chapati"
+],
+
+haziq:[
+"🐔 Chicken Breast (2.2 kg/week)",
+"🍚 Rice (4.2 kg/week)",
+"🥣 Oats (900 g)",
+"🥛 Milk (17 Litres)",
+"🥣 Homemade Yogurt (3 kg)",
+"🍌 Bananas (22)",
+"🥜 Peanuts (350 g)",
+"🌾 Daal (1.3 kg)",
+"🥬 Salad & Vegetables",
+"🫓 Wheat Flour / Chapati"
+]
+
+};
+
+function renderGroceries(person){
+
+shoppingList.innerHTML="";
+
+groceryData[person].forEach(food=>{
+
+shoppingList.innerHTML += `
+
+<div class="meal-item">
+
+<div class="meal-left">
+
+<h4>${food}</h4>
+
+<span>Weekly Grocery</span>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* ==========================================
+   RECOMMENDATION CARD
+========================================== */
+
+function updateRecommendation(person){
+
+const title =
+document.getElementById("recommendationTitle");
+
+const text =
+document.getElementById("recommendationText");
+
+if(person==="umar"){
+
+title.innerHTML =
+"Umar's Lean Bulk Plan";
+
+text.innerHTML =
+
+`
+Target body fat: 11–12%.
+
+Prioritize chicken, milk, yogurt and rice.
+Keep junk food to one cheat meal every 2 weeks.
+
+Estimated daily budget:
+Rs.650–850 depending on chicken prices.
+
+Aim to gain
+0.2–0.3 kg per week.
+`;
+
+}else{
+
+title.innerHTML =
+"Haziq's Lean Bulk Plan";
+
+text.innerHTML =
+
+`
+Higher calories because of your height
+and lower bodyweight.
+
+Focus on larger rice portions,
+extra milk and additional chicken.
+
+Estimated daily budget:
+Rs.750–950.
+
+Aim to gain
+0.25–0.4 kg per week.
+`;
+
+}
+
+}
+
+
+/* ==========================================
+   OVERRIDE renderDiet()
+========================================== */
+
+const oldRenderDiet = renderDiet;
+
+renderDiet = function(person){
+
+oldRenderDiet(person);
+
+renderGroceries(person);
+
+updateRecommendation(person);
+
+};
+
+
+/* ==========================================
+   INITIAL LOAD
+========================================== */
+
+const saved =
+localStorage.getItem("selectedDietPerson") || "umar";
+
+renderDiet(saved);
+
+if(saved==="umar"){
+
+umarBtn.classList.add("active");
+haziqBtn.classList.remove("active");
+
+}else{
+
+haziqBtn.classList.add("active");
+umarBtn.classList.remove("active");
+
+}
+
+</script>
+
+</body>
+</html>

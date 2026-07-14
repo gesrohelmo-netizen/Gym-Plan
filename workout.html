@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GymDietPro | Workout</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+
+            <div class="logo-icon">
+                G
+            </div>
+
+
+            <div class="logo-text">
+
+                <h2>
+                    GymDietPro
+                </h2>
+
+                <span>
+                    Fitness Dashboard
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <nav class="nav-menu">
+
+
+            <a href="index.html" class="nav-item">
+
+                <span class="icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+
+            <a href="diet.html" class="nav-item">
+
+                <span class="icon">
+                    🥗
+                </span>
+
+                <span>
+                    Diet Planner
+                </span>
+
+            </a>
+
+
+
+
+            <a href="workout.html" class="nav-item active">
+
+                <span class="icon">
+                    🏋️
+                </span>
+
+                <span>
+                    Workout
+                </span>
+
+            </a>
+
+
+
+
+            <a href="progress.html" class="nav-item">
+
+                <span class="icon">
+                    📈
+                </span>
+
+                <span>
+                    Progress
+                </span>
+
+            </a>
+
+
+
+
+            <a href="grocery.html" class="nav-item">
+
+                <span class="icon">
+                    🛒
+                </span>
+
+                <span>
+                    Groceries
+                </span>
+
+            </a>
+
+
+
+
+
+            <a href="profile.html" class="nav-item">
+
+                <span class="icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+
+
+
+            <a href="settings.html" class="nav-item">
+
+                <span class="icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+
+        </nav>
+
+
+
+    </aside>
+
+
+
+
+
+    <!-- ================= MAIN ================= -->
+
+
+
+    <main class="main-content">
+
+
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+
+                <h1>
+                    Workout Planner
+                </h1>
+
+
+                <p>
+                    Build strength and stay consistent.
+                </p>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="topbar-right">
+
+
+                <button class="glass-btn" id="themeBtn">
+
+                    🌙
+
+                </button>
+
+
+
+
+
+                <div class="profile-mini">
+
+
+                    <div class="avatar">
+
+                        H
+
+                    </div>
+
+
+
+                    <div>
+
+
+                        <h4>
+                            Helmo
+                        </h4>
+
+
+                        <span>
+                            Premium Member
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </header>
+
+
+
+
+
+        <!-- ================= WORKOUT STATS ================= -->
+
+
+
+        <section class="stats-grid">
+
+
+
+            <div class="glass-card stat-card">
+
+
+                <div class="stat-icon emerald">
+
+                    🔥
+
+                </div>
+
+
+
+                <div class="stat-content">
+
+
+                    <span>
+                        Weekly Goal
+                    </span>
+
+
+                    <h2>
+                        5 Days
+                    </h2>
+
+
+                    <small>
+                        Training Schedule
+                    </small>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="glass-card stat-card">
+
+
+                <div class="stat-icon blue">
+
+                    💪
+
+                </div>
+
+
+
+                <div class="stat-content">
+
+
+                    <span>
+                        Completed
+                    </span>
+
+
+                    <h2 id="completedWorkouts">
+                        0
+                    </h2>
+
+
+                    <small>
+                        This Week
+                    </small>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div class="glass-card stat-card">
+
+
+                <div class="stat-icon orange">
+
+                    ⏱️
+
+                </div>
+
+
+
+                <div class="stat-content">
+
+
+                    <span>
+                        Training Time
+                    </span>
+
+
+                    <h2>
+                        0h
+                    </h2>
+
+
+                    <small>
+                        Total Duration
+                    </small>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div class="glass-card stat-card">
+
+
+                <div class="stat-icon pink">
+
+                    🏆
+
+                </div>
+
+
+
+                <div class="stat-content">
+
+
+                    <span>
+                        Streak
+                    </span>
+
+
+                    <h2>
+                        0 Days
+                    </h2>
+
+
+                    <small>
+                        Keep Going
+                    </small>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+
+        <!-- ================= MAIN WORKOUT AREA ================= -->
+
+
+
+        <section class="dashboard-grid">
+
+
+
+            <div class="left-column">
+
+
+
+
+
+                <div class="glass-card">
+
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Today's Workout
+                        </h2>
+
+
+                        <button class="glass-btn small-btn">
+                            Edit
+                        </button>
+
+
+                    </div>
+
+
+
+
+                    <div class="workout-preview">
+
+
+
+                        <h3>
+                            Push Day
+                        </h3>
+
+
+
+                        <p>
+                            Chest • Shoulders • Triceps
+                        </p>
+
+
+
+
+                        <button class="primary-btn" id="startWorkout">
+
+                            Start Workout
+
+                        </button>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+                <div class="glass-card">
+
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Exercise List
+                        </h2>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="exercise-list">
+
+
+
+                        <div class="meal-item">
+
+
+                            <div class="meal-left">
+
+
+                                <h4>
+                                    Bench Press
+                                </h4>
+
+
+                                <span>
+                                    Chest Compound Movement
+                                </span>
+
+
+                            </div>
+
+
+
+                            <div class="meal-right">
+
+
+                                <strong>
+                                    4 x 10
+                                </strong>
+
+
+                                <small>
+                                    Sets
+                                </small>
+
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="meal-item">
+
+
+                            <div class="meal-left">
+
+
+                                <h4>
+                                    Shoulder Press
+                                </h4>
+
+
+                                <span>
+                                    Shoulder Strength Exercise
+                                </span>
+
+
+                            </div>
+
+
+
+                            <div class="meal-right">
+
+
+                                <strong>
+                                    3 x 12
+                                </strong>
+
+
+                                <small>
+                                    Sets
+                                </small>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="meal-item">
+
+
+                            <div class="meal-left">
+
+
+                                <h4>
+                                    Tricep Pushdown
+                                </h4>
+
+
+                                <span>
+                                    Arm Isolation Exercise
+                                </span>
+
+
+                            </div>
+
+
+
+                            <div class="meal-right">
+
+
+                                <strong>
+                                    3 x 15
+                                </strong>
+
+
+                                <small>
+                                    Sets
+                                </small>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="meal-item">
+
+
+                            <div class="meal-left">
+
+
+                                <h4>
+                                    Dumbbell Fly
+                                </h4>
+
+
+                                <span>
+                                    Chest Isolation Exercise
+                                </span>
+
+
+                            </div>
+
+
+
+                            <div class="meal-right">
+
+
+                                <strong>
+                                    3 x 12
+                                </strong>
+
+
+                                <small>
+                                    Sets
+                                </small>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= CUSTOM WORKOUT ================= -->
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Create Workout
+                        </h2>
+
+
+                    </div>
+
+
+
+                    <form id="workoutForm">
+
+
+
+                        <label>
+                            Workout Name
+                        </label>
+
+
+                        <input 
+                            type="text"
+                            id="workoutName"
+                            placeholder="Leg Day"
+                        >
+
+
+
+                        <br><br>
+
+
+
+
+                        <label>
+                            Muscle Group
+                        </label>
+
+
+                        <select id="muscleGroup">
+
+
+                            <option>
+                                Chest
+                            </option>
+
+
+                            <option>
+                                Back
+                            </option>
+
+
+                            <option>
+                                Legs
+                            </option>
+
+
+                            <option>
+                                Shoulders
+                            </option>
+
+
+                            <option>
+                                Arms
+                            </option>
+
+
+                            <option>
+                                Full Body
+                            </option>
+
+
+                        </select>
+
+
+
+                        <br><br>
+
+
+
+
+                        <label>
+                            Duration
+                        </label>
+
+
+                        <input
+                            type="number"
+                            id="workoutDuration"
+                            placeholder="60 minutes"
+                        >
+
+
+
+
+                        <br><br>
+
+
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn">
+
+                            Save Workout
+
+                        </button>
+
+
+
+
+                    </form>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <!-- ================= RIGHT COLUMN ================= -->
+
+
+
+            <div class="right-column">
+
+
+
+
+
+                <div class="glass-card">
+
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Weekly Plan
+                        </h2>
+
+
+                    </div>
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Monday
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                style="width:100%">
+                            </div>
+
+                        </div>
+
+
+                        <span>
+                            Push
+                        </span>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Tuesday
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                style="width:80%">
+                            </div>
+
+                        </div>
+
+
+                        <span>
+                            Pull
+                        </span>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Wednesday
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                style="width:60%">
+                            </div>
+
+                        </div>
+
+
+                        <span>
+                            Legs
+                        </span>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Thursday
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                style="width:90%">
+                            </div>
+
+                        </div>
+
+
+                        <span>
+                            Upper
+                        </span>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="goal-item">
+
+
+                        <div class="goal-info">
+                            Friday
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                style="width:70%">
+                            </div>
+
+                        </div>
+
+
+                        <span>
+                            Lower
+                        </span>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= WORKOUT TIPS ================= -->
+
+
+
+                <div class="glass-card">
+
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Training Tips
+                        </h2>
+
+
+                    </div>
+
+
+
+                    <blockquote>
+
+
+                        Focus on progressive overload,
+                        proper form and consistency.
+
+
+
+                    </blockquote>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= HISTORY ================= -->
+
+
+
+                <div class="glass-card">
+
+
+                    <div class="card-header">
+
+
+                        <h2>
+                            Workout History
+                        </h2>
+
+
+                    </div>
+
+
+
+
+                    <div id="workoutHistory">
+
+
+
+                        <div class="empty-state">
+
+
+                            <h3>
+                                No workouts completed
+                            </h3>
+
+
+                            <p>
+                                Completed sessions will appear here.
+                            </p>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+
+    </main>
+
+
+
+
+</div>
+
+
+
+
+<script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>
