@@ -1355,15 +1355,46 @@ document.addEventListener(
 
 
 // ================= END OF FINAL APP.JS =================
-const menuBtn = document.getElementById("menuToggle");
-const sidebar = document.querySelector(".sidebar");
+const menuBtn=document.getElementById("menuToggle");
+const sidebar=document.querySelector(".sidebar");
+const overlay=document.getElementById("sidebarOverlay");
 
-if(menuBtn && sidebar){
+if(menuBtn){
 
-menuBtn.addEventListener("click",()=>{
+menuBtn.onclick=()=>{
 
 sidebar.classList.toggle("open");
 
-});
+overlay.classList.toggle("show");
+
+};
 
 }
+
+if(overlay){
+
+overlay.onclick=()=>{
+
+sidebar.classList.remove("open");
+
+overlay.classList.remove("show");
+
+};
+
+}
+
+document.querySelectorAll(".sidebar .nav-item").forEach(item=>{
+
+item.onclick=()=>{
+
+if(window.innerWidth<=768){
+
+sidebar.classList.remove("open");
+
+overlay.classList.remove("show");
+
+}
+
+};
+
+});
