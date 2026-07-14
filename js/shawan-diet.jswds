@@ -1,0 +1,1401 @@
+"use strict";
+
+/* ============================================================
+   GymDietPro
+   Shawan Diet System
+   Part 1/5
+============================================================ */
+
+const dietProfiles = {
+
+    umar: {
+
+        id: "umar",
+
+        name: "Umar",
+
+        age: 17,
+
+        height: "5'7\"",
+
+        weight: 56,
+
+        bodyFat: "13–14%",
+
+        goal: "Lean Bulk",
+
+        calories: 2550,
+
+        protein: 145,
+
+        carbs: 330,
+
+        fats: 65,
+
+        water: 3.5,
+
+        budget: "Rs.650–850 / day"
+
+    },
+
+    haziq: {
+
+        id: "haziq",
+
+        name: "Haziq",
+
+        age: 17,
+
+        height: "5'10\"",
+
+        weight: 52,
+
+        bodyFat: "11–12%",
+
+        goal: "Lean Bulk",
+
+        calories: 2750,
+
+        protein: 160,
+
+        carbs: 365,
+
+        fats: 70,
+
+        water: 4,
+
+        budget: "Rs.750–950 / day"
+
+    }
+
+};
+
+
+
+const groceryLists = {
+
+    umar: [
+
+        "1.8 kg Chicken Breast",
+
+        "3.5 kg Rice",
+
+        "700 g Oats",
+
+        "14 L Milk",
+
+        "2.5 kg Homemade Yogurt",
+
+        "18 Bananas",
+
+        "250 g Peanuts",
+
+        "1 kg Daal",
+
+        "Seasonal Vegetables",
+
+        "Chapati Flour"
+
+    ],
+
+    haziq: [
+
+        "2.2 kg Chicken Breast",
+
+        "4.2 kg Rice",
+
+        "900 g Oats",
+
+        "17 L Milk",
+
+        "3 kg Homemade Yogurt",
+
+        "22 Bananas",
+
+        "350 g Peanuts",
+
+        "1.3 kg Daal",
+
+        "Seasonal Vegetables",
+
+        "Chapati Flour"
+
+    ]
+
+};
+
+
+
+const recommendations = {
+
+    umar: {
+
+        title: "Umar's Lean Bulk Plan",
+
+        text: "Stay around 2550 kcal daily. Focus on high protein, controlled fats and clean carbs. Target muscle gain while keeping abs visible."
+
+    },
+
+    haziq: {
+
+        title: "Haziq's Lean Bulk Plan",
+
+        text: "Because of your height and weight, eat larger portions consistently. Prioritize rice, chicken and milk to gain lean mass."
+
+    }
+
+};
+
+
+
+function $(id){
+
+    return document.getElementById(id);
+
+}
+
+
+
+function savePerson(person){
+
+    localStorage.setItem(
+
+        "selectedDietPerson",
+
+        person
+
+    );
+
+}
+
+
+
+function loadPerson(){
+
+    return localStorage.getItem(
+
+        "selectedDietPerson"
+
+    ) || "umar";
+
+}
+
+
+
+let selectedPerson = loadPerson();
+
+
+
+function currentProfile(){
+
+    return dietProfiles[selectedPerson];
+
+}
+
+
+
+function updateProfileCards(){
+
+    const p = currentProfile();
+
+    if($("currentPerson"))
+        $("currentPerson").textContent = p.name;
+
+    if($("dietWeight"))
+        $("dietWeight").textContent = p.weight + " kg";
+
+    if($("dietHeight"))
+        $("dietHeight").textContent = p.height;
+
+    if($("dietCalories"))
+        $("dietCalories").textContent = p.calories;
+
+    if($("dietProtein"))
+        $("dietProtein").textContent = p.protein + "g";
+
+    if($("goalCalories"))
+        $("goalCalories").textContent = p.calories + " kcal";
+
+    if($("goalProtein"))
+        $("goalProtein").textContent = p.protein + " g";
+
+    if($("goalCarbs"))
+        $("goalCarbs").textContent = p.carbs + " g";
+
+    if($("goalFats"))
+        $("goalFats").textContent = p.fats + " g";
+
+    if($("waterTarget"))
+        $("waterTarget").textContent = p.water + " Litres";
+
+}
+
+
+
+function renderRecommendation(){
+
+    const p = recommendations[selectedPerson];
+
+    if($("recommendationTitle"))
+        $("recommendationTitle").textContent = p.title;
+
+    if($("recommendationText"))
+        $("recommendationText").textContent =
+
+        p.text +
+
+        "\n\nEstimated Budget: " +
+
+        currentProfile().budget;
+
+}
+
+
+
+function renderGroceries(){
+
+    const box = $("shoppingList");
+
+    if(!box) return;
+
+    box.innerHTML = "";
+
+    groceryLists[selectedPerson].forEach(item=>{
+
+        box.innerHTML += `
+
+        <div class="meal-item">
+
+            <div class="meal-left">
+
+                <h4>${item}</h4>
+
+                <span>Weekly Grocery</span>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+/* ---------- Part 2 continues with Umar's complete 7-day diet ---------- */
+/* ============================================================
+   PART 2/5
+   UMAR - COMPLETE 7 DAY DIET
+============================================================ */
+
+const umarDiet = [
+
+{
+
+day:"Monday",
+
+calories:"2550 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"80g Oats + 300ml Milk + 1 Banana + 15g Peanut Butter"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"200g Homemade Yogurt + 20g Peanuts"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"200g Cooked Rice + 170g Grilled Chicken + Salad"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"2 Bananas + 250ml Milk"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"180g Chicken Breast + 250g Rice"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"2 Chapati + 150g Daal + Salad"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"250ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Tuesday",
+
+calories:"2520 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"3 Homemade Chapati + 250ml Milk"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"200g Yogurt"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"2 Chapati + 170g Chicken Curry"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"2 Bananas"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"220g Rice + 170g Chicken"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"150g Daal + 2 Chapati"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"250ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Wednesday",
+
+calories:"2570 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"80g Oats + Milk + Banana"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"Apple + 25g Peanuts"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"250g Rice + 170g Chicken"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"Banana + Yogurt"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"180g Chicken + 250g Rice"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"2 Chapati + Daal"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"250ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Thursday",
+
+calories:"2530 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"2 Chapati + Homemade Yogurt"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"1 Banana"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"200g Rice + 180g Chicken"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"250ml Milk + Banana"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"300g Chicken Pulao"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"150g Daal + Salad + 2 Chapati"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"250ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Friday",
+
+calories:"2580 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"80g Oats + Milk + Banana"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"200g Yogurt"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"150g Beef + 2 Chapati"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"Banana"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"170g Chicken + 200g Rice"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"150g Daal + Salad"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"250ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Saturday",
+
+calories:"2540 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"80g Oats + Milk"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"Apple"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"200g Rice + 170g Chicken"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"Banana + Yogurt"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"180g Chicken + Rice"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"2 Chapati + Daal"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"250ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Sunday",
+
+calories:"2480 kcal (Rest Day)",
+
+meals:[
+
+{
+time:"8:00 AM",
+name:"Breakfast",
+food:"80g Oats + Milk"
+},
+
+{
+time:"11:00 AM",
+name:"Snack",
+food:"200g Yogurt"
+},
+
+{
+time:"2:00 PM",
+name:"Lunch",
+food:"170g Chicken + Vegetables + 2 Chapati"
+},
+
+{
+time:"5:00 PM",
+name:"Evening Snack",
+food:"Banana"
+},
+
+{
+time:"8:00 PM",
+name:"Dinner",
+food:"150g Daal + Salad + 2 Chapati"
+},
+
+{
+time:"10:00 PM",
+name:"Before Bed",
+food:"250ml Milk"
+}
+
+]
+
+}
+
+];
+
+/* ============================================================
+   PART 3/5 STARTS WITH
+   HAZIQ'S COMPLETE 7-DAY DIET
+============================================================ */
+/* ============================================================
+   PART 3/5
+   HAZIQ - COMPLETE 7 DAY DIET
+============================================================ */
+
+const haziqDiet = [
+
+{
+
+day:"Monday",
+
+calories:"2750 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"100g Oats + 350ml Milk + 2 Bananas + 20g Peanut Butter"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"250g Homemade Yogurt + 30g Peanuts"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"250g Rice + 200g Grilled Chicken + Salad"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"2 Bananas + 300ml Milk"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"220g Chicken Breast + 300g Rice"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"3 Chapati + 180g Daal"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"300ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Tuesday",
+
+calories:"2730 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"3 Chapati + 300ml Milk"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"250g Homemade Yogurt"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"250g Rice + 200g Chicken Curry"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"2 Bananas"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"350g Chicken Pulao"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"3 Chapati + 180g Daal"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"300ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Wednesday",
+
+calories:"2760 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"100g Oats + 350ml Milk + Banana"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"Apple + 30g Peanuts"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"300g Rice + 200g Chicken"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"Banana + 250g Yogurt"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"220g Chicken + 300g Rice"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"3 Chapati + Daal"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"300ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Thursday",
+
+calories:"2740 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"3 Chapati + Yogurt"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"Banana"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"250g Rice + 200g Chicken"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"300ml Milk + Banana"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"350g Chicken Pulao"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"180g Daal + Salad + 3 Chapati"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"300ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Friday",
+
+calories:"2780 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"100g Oats + Milk"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"250g Yogurt"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"180g Beef + 3 Chapati"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"2 Bananas"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"220g Chicken + 300g Rice"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"180g Daal"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"300ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Saturday",
+
+calories:"2740 kcal",
+
+meals:[
+
+{
+time:"7:30 AM",
+name:"Breakfast",
+food:"100g Oats + Milk"
+},
+
+{
+time:"10:30 AM",
+name:"Snack",
+food:"Apple"
+},
+
+{
+time:"1:30 PM",
+name:"Lunch",
+food:"250g Rice + 200g Chicken"
+},
+
+{
+time:"4:00 PM",
+name:"Pre Workout",
+food:"Banana + Yogurt"
+},
+
+{
+time:"6:45 PM",
+name:"Post Workout",
+food:"220g Chicken + 300g Rice"
+},
+
+{
+time:"9:00 PM",
+name:"Dinner",
+food:"3 Chapati + Daal"
+},
+
+{
+time:"10:30 PM",
+name:"Before Bed",
+food:"300ml Milk"
+}
+
+]
+
+},
+
+{
+
+day:"Sunday",
+
+calories:"2670 kcal (Rest Day)",
+
+meals:[
+
+{
+time:"8:00 AM",
+name:"Breakfast",
+food:"100g Oats + Milk"
+},
+
+{
+time:"11:00 AM",
+name:"Snack",
+food:"250g Yogurt"
+},
+
+{
+time:"2:00 PM",
+name:"Lunch",
+food:"200g Chicken + Vegetables + 3 Chapati"
+},
+
+{
+time:"5:00 PM",
+name:"Evening Snack",
+food:"2 Bananas"
+},
+
+{
+time:"8:00 PM",
+name:"Dinner",
+food:"180g Daal + Salad + 3 Chapati"
+},
+
+{
+time:"10:00 PM",
+name:"Before Bed",
+food:"300ml Milk"
+}
+
+]
+
+}
+
+];
+
+/* ============================================================
+   PART 4/5
+   Rendering Engine + Person Switching + UI Logic
+============================================================ */
+/* ============================================================
+   PART 4/5
+   Rendering Engine + Person Switching + UI Logic
+============================================================ */
+
+function getCurrentDiet() {
+    return selectedPerson === "umar" ? umarDiet : haziqDiet;
+}
+
+function createMealHTML(meal) {
+
+    return `
+        <div class="meal-item">
+
+            <div class="meal-left">
+
+                <h4>${meal.name}</h4>
+
+                <span>${meal.time}</span>
+
+            </div>
+
+            <div class="meal-right">
+
+                <strong>${meal.food}</strong>
+
+            </div>
+
+        </div>
+    `;
+
+}
+
+function createDayHTML(day) {
+
+    let meals = "";
+
+    day.meals.forEach(meal => {
+
+        meals += createMealHTML(meal);
+
+    });
+
+    return `
+
+        <div class="glass-card diet-day-card">
+
+            <div class="card-header">
+
+                <h2>${day.day}</h2>
+
+                <span class="text-green">${day.calories}</span>
+
+            </div>
+
+            ${meals}
+
+        </div>
+
+    `;
+
+}
+
+function renderDiet() {
+
+    const container = $("weeklyDietContainer");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const diet = getCurrentDiet();
+
+    diet.forEach(day => {
+
+        container.innerHTML += createDayHTML(day);
+
+    });
+
+}
+
+function setActiveButton() {
+
+    const umarBtn = $("umarBtn");
+    const haziqBtn = $("haziqBtn");
+
+    if (!umarBtn || !haziqBtn) return;
+
+    if (selectedPerson === "umar") {
+
+        umarBtn.classList.add("active");
+        haziqBtn.classList.remove("active");
+
+    } else {
+
+        haziqBtn.classList.add("active");
+        umarBtn.classList.remove("active");
+
+    }
+
+}
+
+function updateEverything() {
+
+    updateProfileCards();
+
+    renderRecommendation();
+
+    renderGroceries();
+
+    renderDiet();
+
+    setActiveButton();
+
+}
+
+function switchPerson(person) {
+
+    if (!dietProfiles[person]) return;
+
+    selectedPerson = person;
+
+    savePerson(person);
+
+    updateEverything();
+
+}
+
+function setupButtons() {
+
+    const umarBtn = $("umarBtn");
+    const haziqBtn = $("haziqBtn");
+
+    if (umarBtn) {
+
+        umarBtn.addEventListener("click", () => {
+
+            switchPerson("umar");
+
+        });
+
+    }
+
+    if (haziqBtn) {
+
+        haziqBtn.addEventListener("click", () => {
+
+            switchPerson("haziq");
+
+        });
+
+    }
+
+}
+
+function setupThemeButton() {
+
+    const themeBtn = $("themeBtn");
+
+    if (!themeBtn) return;
+
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("light-mode");
+
+    });
+
+}
+
+/* ============================================================
+   PART 5/5
+   Initialization + Final Startup
+============================================================ */
+/* ============================================================
+   PART 4/5
+   Rendering Engine + Person Switching + UI Logic
+============================================================ */
+
+function getCurrentDiet() {
+    return selectedPerson === "umar" ? umarDiet : haziqDiet;
+}
+
+function createMealHTML(meal) {
+
+    return `
+        <div class="meal-item">
+
+            <div class="meal-left">
+
+                <h4>${meal.name}</h4>
+
+                <span>${meal.time}</span>
+
+            </div>
+
+            <div class="meal-right">
+
+                <strong>${meal.food}</strong>
+
+            </div>
+
+        </div>
+    `;
+
+}
+
+function createDayHTML(day) {
+
+    let meals = "";
+
+    day.meals.forEach(meal => {
+
+        meals += createMealHTML(meal);
+
+    });
+
+    return `
+
+        <div class="glass-card diet-day-card">
+
+            <div class="card-header">
+
+                <h2>${day.day}</h2>
+
+                <span class="text-green">${day.calories}</span>
+
+            </div>
+
+            ${meals}
+
+        </div>
+
+    `;
+
+}
+
+function renderDiet() {
+
+    const container = $("weeklyDietContainer");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const diet = getCurrentDiet();
+
+    diet.forEach(day => {
+
+        container.innerHTML += createDayHTML(day);
+
+    });
+
+}
+
+function setActiveButton() {
+
+    const umarBtn = $("umarBtn");
+    const haziqBtn = $("haziqBtn");
+
+    if (!umarBtn || !haziqBtn) return;
+
+    if (selectedPerson === "umar") {
+
+        umarBtn.classList.add("active");
+        haziqBtn.classList.remove("active");
+
+    } else {
+
+        haziqBtn.classList.add("active");
+        umarBtn.classList.remove("active");
+
+    }
+
+}
+
+function updateEverything() {
+
+    updateProfileCards();
+
+    renderRecommendation();
+
+    renderGroceries();
+
+    renderDiet();
+
+    setActiveButton();
+
+}
+
+function switchPerson(person) {
+
+    if (!dietProfiles[person]) return;
+
+    selectedPerson = person;
+
+    savePerson(person);
+
+    updateEverything();
+
+}
+
+function setupButtons() {
+
+    const umarBtn = $("umarBtn");
+    const haziqBtn = $("haziqBtn");
+
+    if (umarBtn) {
+
+        umarBtn.addEventListener("click", () => {
+
+            switchPerson("umar");
+
+        });
+
+    }
+
+    if (haziqBtn) {
+
+        haziqBtn.addEventListener("click", () => {
+
+            switchPerson("haziq");
+
+        });
+
+    }
+
+}
+
+function setupThemeButton() {
+
+    const themeBtn = $("themeBtn");
+
+    if (!themeBtn) return;
+
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("light-mode");
+
+    });
+
+}
+
+/* ============================================================
+   PART 5/5
+   Initialization + Final Startup
+============================================================ */
