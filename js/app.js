@@ -1355,3 +1355,15 @@ document.addEventListener(
 
 
 // ================= END OF FINAL APP.JS =================
+const menuBtn = document.getElementById("menuToggle");
+const sidebar = document.querySelector(".sidebar");
+
+if(menuBtn && sidebar){
+
+menuBtn.addEventListener("click",()=>{
+
+sidebar.classList.toggle("open");
+
+});
+
+}
